@@ -18,3 +18,12 @@ use Illuminate\Support\Facades\Route;
 });*/
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
+
+Route::get('/product', [\App\Http\Controllers\ProductController::class, 'show']);
+
+
+
+// Admin Routes
+
+Route::get('/admin/products', [\App\Http\Controllers\AdminProductController::class, 'index']);
+Route::get('/admin/products/edit', [\App\Http\Controllers\AdminProductController::class, 'edit']);
