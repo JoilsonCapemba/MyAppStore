@@ -17,13 +17,13 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 
-Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/product', [\App\Http\Controllers\ProductController::class, 'show']);
+Route::get('/product/{product}', [\App\Http\Controllers\ProductController::class, 'show'])->name('product');
 
 
 
 // Admin Routes
 
-Route::get('/admin/products', [\App\Http\Controllers\AdminProductController::class, 'index']);
-Route::get('/admin/products/edit', [\App\Http\Controllers\AdminProductController::class, 'edit']);
+Route::get('/admin/products', [\App\Http\Controllers\AdminProductController::class, 'index'])->name('admi.products');
+Route::get('/admin/products/edit', [\App\Http\Controllers\AdminProductController::class, 'edit'])->name('admin.product.edit');
