@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/product/{product}', [\App\Http\Controllers\ProductController::class, 'show'])->name('product');
+Route::get('/product/{product:slug}', [\App\Http\Controllers\ProductController::class, 'show'])->name('product');
 
 
 
